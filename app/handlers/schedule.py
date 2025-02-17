@@ -2,7 +2,9 @@ import asyncio
 from datetime import datetime
 import pytz
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 chat_id = os.getenv("CHAT_ID")
 
 
