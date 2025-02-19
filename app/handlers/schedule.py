@@ -24,8 +24,8 @@ async def math_handler(bot):
 
     async def scheduler():
         while True:
-            now = datetime.now(alma_ata_tz).strftime("%H:%M")
-            if now == "19:25":
+            now = datetime.now(alma_ata_tz)
+            if now.weekday() == 0 and now.strftime("%H:%M") == "19:25":
                 await send_math_message()
                 await asyncio.sleep(60)
             await asyncio.sleep(10)
