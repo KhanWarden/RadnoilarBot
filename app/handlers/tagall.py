@@ -14,3 +14,9 @@ async def tag_all_handler(message: Message, bot):
     usernames.pop(0)
     bot_msg = " ".join(usernames)
     await message.answer(bot_msg)
+
+
+@router.message(Command("dota"))
+async def tag_doters(message: Message):
+    await message.answer("Дотеры, сбор!\n"
+                         "@zhsck @NirmanychHimself @Allur51 @thegamri @KhanWarden")
