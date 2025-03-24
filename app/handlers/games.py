@@ -17,5 +17,7 @@ async def who_gay_game(message: Message, bot):
     members = await bot.get_chat_administrators(chat_id=message.chat.id)
     all_usernames = [member.user.username for member in members if member.user.username]
     usernames = [f"@{username}" for username in all_usernames]
+    gay = random.choice(usernames)
+    phrase = random.choice(Phrases.is_gay)
 
-    await message.answer(f"{random.choice(Phrases.is_gay).format(random.choice(usernames))}")
+    await message.answer(f"{phrase.format(gay=gay)}")
